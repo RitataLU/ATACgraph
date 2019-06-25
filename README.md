@@ -1,5 +1,5 @@
-# ATACgraph_v2
-.. image:: https://img.shields.io/badge/python-2.7-blue.svg
+# ATACgraph
+![Python 2.7] (https://img.shields.io/badge/python-2.7-blue.svg)
 
 ATACgraph
 =========
