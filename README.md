@@ -156,15 +156,154 @@ optional arguments:
 
 **Output:** 
 * 2 figures (fragment lenth distribution & FFT analysis result)
-   * fragment_distribution.png
-   * fragment_distribution_fft.png
+
+   * fragment distribution
+   ! [fragDist] (https://github.com/RitataLU/ATACgraph_v2/blob/master/fragDist.png)
+   
+   * fragment distribution FFT
+   ! [FFT] (https://github.com/RitataLU/ATACgraph_v2/blob/master/FFT.png)
 
 
+# ATAC-seq peak calling
+
+**Input:**
+* ATAC-seq bam file
+
+```
+ATACgraph callPeak -h
+usage: callPeak [-h] [-s SEPARATE] [-shift SHIFT] [-ES EXTEND] [-bs BINSIZE]
+                input_bam output_name
+
+positional arguments:
+  input_bam
+  output_name
+
+optional arguments:
+  -h, --help    show this help message and exit
+  -s SEPARATE   1: integration site; 2: whole fragment
+  -shift SHIFT  shift from integration site
+  -ES EXTEND    extend size from integration site
+  -bs BINSIZE   binsize for bigwig
+  
+```
+
+**Output:** 
+* Peak location BED file (.narrowpeak) & Peak intensity bigWigfile (.coverage.bw)
 
 
+# Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
+
+**Input:**
+* ATAC-seq bam file
+
+```
+ATACgraph genePlot -h
+usage: genePlot [-h] [-p PROMOTER] input_peak input_bigwig gtf_name
+
+positional arguments:
+  input_peak
+  input_bigwig
+  gtf_name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROMOTER, --promoter PROMOTER
+  
+
+```
+
+**Output:** 
+
+* Figures 
+   * heatmap, metaplot ATAC-seq abundance related to genes 
+   * heatmap, metaplot ATAC-seq abundance related toand peaks
+   
+   ! [heatmap] (https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png)
+   
+   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
+   
+   ! [Enrichment] (https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
+
+*  text files
+   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
+   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
+   * The intersection site between 8 genomic features and peaks (8 files)
+   
+  
+# Generate fragment size tracks 
+
+**Input:**
+* ATAC-seq bam file
+
+```
+ATACgraph junctionBed -h
+usage: junctionBed [-h] [-s SEPARATE] [-b BIN] [-f FILTER]
+                   input_bam output_bed
+
+positional arguments:
+  input_bam
+  output_bed
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SEPARATE, --separate SEPARATE
+  -b BIN, --bin BIN
+  -f FILTER, --filter FILTER
+
+```
+
+**Output:** 
+
+* track BED files
+* Visualization on IGV
+! [specificPeak] (https://github.com/RitataLU/ATACgraph_v2/blob/master/junction.png)
 
 
+# Identify differential enriched ATAC-seq peaks between two conditions.
+
+**Input:**
+* 2 ATAC-seq peaks
+
+```
+ATACgraph specificPeaks -h
+usage: specificPeaks [-h] input_peakAs input_peakBs output_bedA output_bedB
+
+positional arguments:
+  input_peakAs  Peak beds, seprate by comma
+  input_peakBs  Peak beds, seprate by comma
+  output_bedA
+  output_bedB
+
+optional arguments:
+  -h, --help    show this help message and exit
+```
+**Output:** 
+
+* 2 ATAC-seq specific peaks BED files
 
 
+# Comparing peaks between ATAC-seq and another Seq.
+
+**Input:**
+* ATAC-seq peaks BED file & another seq peaks file
+
+```
+ATACgraph  seqCompare -h
+usage: seqCompare [-h] atac_peak other_peak ATAC_name otherPeak_name overPeak
+
+positional arguments:
+  atac_peak       ATAC-seq peak bed
+  other_peak      Other seq peak bed
+  ATAC_name       name for ATAC peak
+  otherPeak_name  name for other peak
+  overPeak        name for overlap peak
+
+optional arguments:
+  -h, --help      show this help message and exit
+```
+**Output:** 
+
+* Venn diagram
+! [Venn] (https://github.com/RitataLU/ATACgraph_v2/blob/master/venn.png)
 
 
