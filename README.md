@@ -1,9 +1,9 @@
 # ATACgraph
 
 
-* Python 2.7
 
-    `SAMtools <http://www.htslib.org/>`_ 
+ *``` *SAMtools <http://www.htslib.org/> *``` *
+ 
     `deepTools <https://deeptools.readthedocs.org>`_
     `BEDtools <http://bedtools.readthedocs.org/>`_ 
 
