@@ -162,6 +162,7 @@ optional arguments:
    ![fragDist](https://github.com/RitataLU/ATACgraph_v2/blob/master/fragDist.png)
    
    * fragment distribution FFT
+   
    ![FFT](https://github.com/RitataLU/ATACgraph_v2/blob/master/FFT.png)
 
 
@@ -257,6 +258,7 @@ optional arguments:
 
 * track BED files
 * Visualization on IGV
+
 ![specificPeak](https://github.com/RitataLU/ATACgraph_v2/blob/master/junction.png)
 
 
@@ -305,6 +307,7 @@ optional arguments:
 **Output:** 
 
 * Venn diagram
+
 ![Venn](https://github.com/RitataLU/ATACgraph_v2/blob/master/venn.png)
 
 
