@@ -1,22 +1,17 @@
 # ATACgraph
-![Python 2.7] (https://img.shields.io/badge/python-2.7-blue.svg)
 
-ATACgraph
-=========
 
 * Python 2.7
 
-* `SAMtools <http://www.htslib.org/>`_ 
-* `deepTools <https://deeptools.readthedocs.org>`_
-* `BEDtools <http://bedtools.readthedocs.org/>`_ 
+    `SAMtools <http://www.htslib.org/>`_ 
+    `deepTools <https://deeptools.readthedocs.org>`_
+    `BEDtools <http://bedtools.readthedocs.org/>`_ 
 
 * Python Modules 'Numpy', 'pandas' and 'Metplotlib'. To install the packages, use the following commands on an UNIX terminal:
-  
-  ::
-
-  $ pip install numpy
-  $ pip install pandas
-  $ pip install matplolib
+ 
+    $ pip install numpy
+    $ pip install pandas
+    $ pip install matplolib
   
   Installation
 ============
