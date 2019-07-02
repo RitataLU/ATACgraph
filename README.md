@@ -4,6 +4,8 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 
 ![ATACgraph flow](https://github.com/RitataLU/ATACgraph_v2/blob/master/ATACgraph%20flow.png)
 
+
+
 # <a name="SystemRequirements"></a>System Requirements
 * Linux or Mac OS Environment
 * Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2 could be downloaded from http://www.python.org/download/ )
@@ -25,7 +27,7 @@ pip install Matplolib
 
 
 ```
-$ git clone https://github.com/kullatnunu/atacgraph.git
+$ git clone https://github.com/RitataLU/atacgraph_v2.git
 $ pip install -r atacgraph/base.txt
 
 ``` 
@@ -47,4 +49,4 @@ $ source ~/.bash_profile
 
 # Tutorial
 
-##1. remove mithochdria : rmChr 
+## 1. remove mithochdria : rmChr 
