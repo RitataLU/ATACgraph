@@ -2,6 +2,8 @@
 
 ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 11 analyses in 9 major modules to profile (epi)genome. 
 
+![ATACgraph flow](https://github.com/RitataLU/ATACgraph_v2/blob/master/ATACgraph%20flow.png)
+
 # <a name="SystemRequirements"></a>System Requirements
 * Linux or Mac OS Environment
 * Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2 could be downloaded from http://www.python.org/download/ )
