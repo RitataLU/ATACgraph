@@ -21,26 +21,28 @@ pip install Matplolib
 
 1. Download the source code and install the requirements.
 
-  ::
 
-  $ git clone https://github.com/kullatnunu/atacgraph.git
-  $ pip install -r atacgraph/base.txt
+```
+$ git clone https://github.com/kullatnunu/atacgraph.git
+$ pip install -r atacgraph/base.txt
 
-  
-2. Add your ATAC-graph path to the PATH.
+``` 
+
+2. Add your ATACgraph path to the PATH.
 
    (1) Edit bash profile
   
-   ::
-  
-   $ vi ~/.bash_profile
+``` 
+$ vi ~/.bash_profile
+``` 
    
    (2) Add ATAC-graph path to the PATH environment variable.
  
-   ::
-  
-   $ PATH=$PATH:(ATAC-graph file path)
-   $ source ~/.bash_profile
-   
-Running ATAC-graph
-==================
+``` 
+$ PATH=$PATH:(ATAC-graph file path)
+$ source ~/.bash_profile
+```    
+
+# Tutorial
+
+##1. remove mithochdria : rmChr 
