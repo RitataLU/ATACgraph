@@ -158,10 +158,11 @@ optional arguments:
 * 2 figures (fragment lenth distribution & FFT analysis result)
 
    * fragment distribution
-   ! [fragDist] (https://github.com/RitataLU/ATACgraph_v2/blob/master/fragDist.png)
+   
+   ![fragDist](https://github.com/RitataLU/ATACgraph_v2/blob/master/fragDist.png)
    
    * fragment distribution FFT
-   ! [FFT] (https://github.com/RitataLU/ATACgraph_v2/blob/master/FFT.png)
+   ![FFT](https://github.com/RitataLU/ATACgraph_v2/blob/master/FFT.png)
 
 
 # ATAC-seq peak calling
@@ -218,11 +219,11 @@ optional arguments:
    * heatmap, metaplot ATAC-seq abundance related to genes 
    * heatmap, metaplot ATAC-seq abundance related toand peaks
    
-   ! [heatmap] (https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png)
+   ![heatmap](https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png)
    
    * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
    
-   ! [Enrichment] (https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
+   ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
 
 *  text files
    * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
@@ -256,7 +257,7 @@ optional arguments:
 
 * track BED files
 * Visualization on IGV
-! [specificPeak] (https://github.com/RitataLU/ATACgraph_v2/blob/master/junction.png)
+![specificPeak](https://github.com/RitataLU/ATACgraph_v2/blob/master/junction.png)
 
 
 # Identify differential enriched ATAC-seq peaks between two conditions.
@@ -304,6 +305,6 @@ optional arguments:
 **Output:** 
 
 * Venn diagram
-! [Venn] (https://github.com/RitataLU/ATACgraph_v2/blob/master/venn.png)
+![Venn](https://github.com/RitataLU/ATACgraph_v2/blob/master/venn.png)
 
 
