@@ -166,7 +166,7 @@ optional arguments:
    ![FFT](https://github.com/RitataLU/ATACgraph_v2/blob/master/FFT.png)
 
 
-# ATAC-seq peak calling
+##  ATAC-seq peak calling
 
 **Input:**
 * ATAC-seq bam file
@@ -193,7 +193,7 @@ optional arguments:
 * Peak location BED file (.narrowpeak) & Peak intensity bigWigfile (.coverage.bw)
 
 
-# Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
+## Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
 
 **Input:**
 * ATAC-seq bam file
@@ -232,7 +232,7 @@ optional arguments:
    * The intersection site between 8 genomic features and peaks (8 files)
    
   
-# Generate fragment size tracks 
+## Generate fragment size tracks 
 
 **Input:**
 * ATAC-seq bam file
@@ -262,7 +262,7 @@ optional arguments:
 ![specificPeak](https://github.com/RitataLU/ATACgraph_v2/blob/master/junction.png)
 
 
-# Identify differential enriched ATAC-seq peaks between two conditions.
+## Identify differential enriched ATAC-seq peaks between two conditions.
 
 **Input:**
 * 2 ATAC-seq peaks
@@ -285,7 +285,7 @@ optional arguments:
 * 2 ATAC-seq specific peaks BED files
 
 
-# Comparing peaks between ATAC-seq and another Seq.
+## Comparing peaks between ATAC-seq and another Seq.
 
 **Input:**
 * ATAC-seq peaks BED file & another seq peaks file
