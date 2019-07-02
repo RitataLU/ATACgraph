@@ -1,20 +1,23 @@
 # ATACgraph
 
+ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 11 analyses in 9 major modules to profile (epi)genome. 
 
+# <a name="SystemRequirements"></a>System Requirements
+* Linux or Mac OS Environment
+* Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2 could be downloaded from http://www.python.org/download/ )
 
- *``` *SAMtools <http://www.htslib.org/> *``` *
- 
-    `deepTools <https://deeptools.readthedocs.org>`_
-    `BEDtools <http://bedtools.readthedocs.org/>`_ 
+* Python Modules 'Pysam' and 'Metplotlib'. To install the packages, use the following commands on an UNIX terminal:
 
-* Python Modules 'Numpy', 'pandas' and 'Metplotlib'. To install the packages, use the following commands on an UNIX terminal:
- 
-    $ pip install numpy
-    $ pip install pandas
-    $ pip install matplolib
-  
-  Installation
-============
+```
+pip install numpy
+pip install pandas
+pip install pysam
+pip install Matplolib
+
+```
+
+# Installation
+
 
 1. Download the source code and install the requirements.
 
