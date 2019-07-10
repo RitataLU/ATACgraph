@@ -30,7 +30,7 @@ pip install pybedtools
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
-$ pip install -r atacgraph/base.txt
+$ pip install -r ATACgraph/base.txt
 
 ``` 
 
