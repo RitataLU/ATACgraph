@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+import os
+import sys
+import imp
+
+ATACgraph_dir = os.path.dirname(os.path.abspath(__file__))
+
+subcommandlist=["rmChr","calFragDist","selectFragSize","junctionBed","gtftoBed","callPeak","specificPeaks","genePlot","seqCompare"]
+
+if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
+
+	print "Usage: atacG <subcommand> [options]"
+	print "atacG sub-commands include:"
+	print ""
+	print "rmChr             Remove chrM,chrPt"
+	print "calFragDist       Generate figures of fragments size distribution & Fast Fourier transform"
+	print "selectFragSize    Select bam fragments size"
+	print "junctionBed       Generate junction bed track"
+	print "gtftoBed          Transform gtf file to bed files"
+	print "callPeak          call ATAC-seq peaks"
+	print "specificPeaks     Find specific peaks between 2 peaks files"
+	print "genePlot          Generate figures of depicting gene accessibility"
+	print "seqCompare        Compare peaks between ATAC-seq and Other seq"
+	
+	sys.exit()
+
+
+tool = sys.argv[1]
+module_dir = '{0}.py'.format(tool)
+filename = os.path.join(ATACgraph_dir, module_dir)
+module = imp.load_source(tool, filename)
+del sys.argv[0]
+module.main()
+
+
+
+
+
