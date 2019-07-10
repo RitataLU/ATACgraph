@@ -92,7 +92,7 @@ to seperate. For example chrM,chrPt
 * ATAC-seq reads file in bam
 
 ```
-$ TACgraph selectFragSize -h
+$ ATACgraph selectFragSize -h
 usage: selectFragSize [-h] [-f FILTER] [-m MODE] input_bam output_bam
 
 positional arguments:
