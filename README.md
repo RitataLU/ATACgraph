@@ -9,9 +9,9 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 # <a name="SystemRequirements"></a>System Requirements
 * Linux or Mac OS Environment
 * Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2 could be downloaded from http://www.python.org/download )
-* (http://www.htslib.org/ "SAMtools") 
+* [SAMtools](http://www.htslib.org/"SAMtools") 
 * (https://deeptools.readthedocs.org/"deepTools")
-* (http://bedtools.readthedocs.org/ "BEDtools") 
+* (http://bedtools.readthedocs.org/"BEDtools") 
 * Python Modules. To install the packages, use the following commands on an UNIX terminal:
 
 
