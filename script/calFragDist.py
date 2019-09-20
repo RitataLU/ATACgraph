@@ -1,4 +1,5 @@
-#! /usr/bin/python
+#! /usr/bin/env python
+#version 2 2019.9.6
 import pysam
 import sys
 import subprocess
@@ -14,13 +15,15 @@ import argparse
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('input_bam')
-    parser.add_argument('output_name')
+    parser.add_argument('fragment_distribution_outname')
+    parser.add_argument('fragment_fft_outname')
     args = parser.parse_args()
     input_bam = args.input_bam
-    outname = args.output_name
-    fragment_distribution(input_bam,outname)
+    output1 = args.fragment_distribution_outname
+    output2 = args.fragment_fft_outname
+    fragment_distribution(input_bam,output1,output2)
 
-def fragment_distribution(input_bam,outname):
+def fragment_distribution(input_bam,output1,output2):
     #read bam file
     bam = pysam.AlignmentFile(input_bam)
     #get fragment lengths
@@ -40,7 +43,7 @@ def fragment_distribution(input_bam,outname):
     plt.xticks(fontsize=20)
     plt.yticks(fontsize=20)
     ax1.set_title('Fragment distribution', fontsize=20)
-    outfile1 = outname + '_fragment_distribution.png'
+    outfile1 = output1
     plt.savefig(outfile1, dpi=300,bbox_inches='tight')
     plt.close(fig)
 
@@ -69,7 +72,7 @@ def fragment_distribution(input_bam,outname):
     ax.set_xlabel('Period (bp)', fontsize=20)
     ax.set_ylabel('Power', fontsize=20)
     ax.set_title('Period of fragment distribution', fontsize=20)
-    outfile2 = outname + '_fragment_distribution_fft.png'
+    outfile2 = output2
     plt.savefig(outfile2,dpi=300,bbox_inches='tight')
 
 def ffttable(selected):
