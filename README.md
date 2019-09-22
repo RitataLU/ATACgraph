@@ -18,7 +18,7 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 pip install numpy
 pip install pandas
 pip install pysam==0.11.2.2
-pip install Matplotlib
+pip install matplotlib
 pip install argparse
 pip install pybedtools
 
@@ -32,7 +32,7 @@ pip install pybedtools
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
-$ pip install -r ATACgraph/base.txt
+$ pip install -r ATACgraph/.txt
 
 ``` 
 
