@@ -36,21 +36,21 @@ def main():
 	#option1 integration site/ tn5 cutting site
 	if (args.separate == 1):
 		# shift: move read 10 ,extend left and right 20
-		subprocess.call('''macs2 callpeak -t %s --nomodel --shift -%s --extsize %s -n %s'''%(input_bam,shiftSize,extSize,Outname+'.integ_peak'), shell=True)
+		subprocess.call('''macs2 callpeak -t %s --nomodel --shift -%s --extsize %s -n %s 2>&1'''%(input_bam,shiftSize,extSize,Outname+'.integ_peak'), shell=True)
 		#Making bigwig/ bamcoverage limit: cannot use minus
                 #subprocess.call('''bamCoverage -b %s -bs 10 --normalizeUsingRPKM --Offset 1 20 -o %s'''%(input_bam, input_bam+'_coverage.bw'),shell=True
-                subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsingRPKM --Offset 1 20 -o %s'''%(input_bam, bs, Outname+'.integ_coverage.bw'),shell=True)
+                subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsingRPKM --Offset 1 20 -o %s 2>&1'''%(input_bam, bs, Outname+'.integ_coverage.bw'),shell=True)
         elif(args.separate == 2):
         
             subprocess.call('''samtools index %s'''%(input_bam),shell=True)
             #subprocess.call('''samtools index %s'''%(input_bam+'_short.bam'),shell=True)
        
             #-f: paired end
-            subprocess.call('''macs2 callpeak -t %s --format BAMPE  -n %s'''%(input_bam,Outname+'.narrowpeak'), shell=True)
+            subprocess.call('''macs2 callpeak -t %s --format BAMPE -n %s 2>&1'''%(input_bam,Outname+'.narrowpeak'), shell=True)
             #subprocess.call('''macs2 callpeak -t %s --format BAMPE --broad -n %s'''%(input_bam+'_short.bam',input_bam+'_short_peak'), shell=True)
             #Making bam coverage
             #subprocess.call('''bamCoverage -b %s -bs 10 --normalizeUsingRPKM --Offset 1 20 -o %s'''%(input_bam, input_bam+'_coverage.bw'),shell=True)
-            subprocess.call('''bamCoverage -b %s -bs 10 --normalizeUsingRPKM -e -o %s'''%(input_bam, Outname+'_coverage.bw'),shell=True)
+            subprocess.call('''bamCoverage -b %s -bs 10 --normalizeUsingRPKM -e -o %s 2>&1'''%(input_bam, Outname+'_coverage.bw'),shell=True)
             #subprocess.call('''bamCoverage -b %s -bs 10 --normalizeUsingRPKM -e -o %s'''%(input_bam+'_short.bam', input_bam+'_short_coverage.bw'),shell=True)
 	
 	else:

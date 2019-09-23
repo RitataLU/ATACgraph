@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import pybedtools
-import csv
 import argparse
+import csv
+import warnings
 
 def main():
     parser = argparse.ArgumentParser()
@@ -21,7 +22,11 @@ def main():
     lenB = len(groupB)
     x = pybedtools.BedTool()
     result = x.multi_intersect(i=groupA+groupB,cluster='T')
-    df = result.to_dataframe()
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore",category=FutureWarning)
+        df = result.to_dataframe()
+
+#    df = result.to_dataframe()
     specA = ','.join(str(x) for x in range(1,lenA +1))
     specB = ','.join(str(x) for x in range(lenA +1,lenA + lenB +1))
     peaksA = df[df.score == specA].iloc[:,0:3]
