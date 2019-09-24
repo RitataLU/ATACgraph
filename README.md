@@ -130,7 +130,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p PROMOTER, --promoter PROMOTER
+  -p PROMOTER,          --promoter PROMOTER, promoter region from gene transcript start site (TSS) default = 2000
                         
 ```
 
