@@ -251,11 +251,10 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit:w
   -s SEPARATE, --separate SEPARATE
-                        boarder lenth of long and short fragment(bp), default:
-                        150
+                        border lenth of long and short fragment(bp), default: 150
   -b BIN, --bin BIN     binzise of genome(bp), default: 10
   -f FILTER, --filter FILTER
-                        number offragment juction tracks, default:1
+                        number of fragment juction tracks, default:1
 
 ```
 
@@ -304,7 +303,7 @@ positional arguments:
   other_peak      Other seq peak bed
   ATAC_name       name for ATAC peak
   otherPeak_name  name for other peak
-  overPeak        name for overlap peak
+  overPeak        name for overlapping peak
 
 optional arguments:
   -h, --help      show this help message and exit
