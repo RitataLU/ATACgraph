@@ -249,10 +249,13 @@ positional arguments:
   output_bed
 
 optional arguments:
-  -h, --help            show this help message and exit
+  -h, --help            show this help message and exit:w
   -s SEPARATE, --separate SEPARATE
-  -b BIN, --bin BIN
+                        boarder lenth of long and short fragment(bp), default:
+                        150
+  -b BIN, --bin BIN     binzise of genome(bp), default: 10
   -f FILTER, --filter FILTER
+                        number offragment juction tracks, default:1
 
 ```
 
