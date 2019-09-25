@@ -185,9 +185,9 @@ positional arguments:
 optional arguments:
   -h, --help    show this help message and exit
   -s SEPARATE   1: integration site; 2: whole fragment
-  -shift SHIFT  shift from integration site
-  -ES EXTEND    extend size from integration site
-  -bs BINSIZE   binsize for bigwig
+  -shift SHIFT  shift from integration site, default=10
+  -ES EXTEND    extend size from integration site, default=20
+  -bs BINSIZE   binsize for bigwig, default=10
   
 ```
 
