@@ -245,8 +245,15 @@ optional arguments:
    
    
    
-   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
    
+   
+   
+   
+   
+   
+   
+   
+   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
    ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
 
 *  text files
