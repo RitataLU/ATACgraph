@@ -81,16 +81,13 @@ def associate(input_peak,samplename,promoter):
         s1_group.to_csv(input_peak+"_gene"+"_summary_table.xls", sep='\t',index=False)
 
 def coverage_heatmap(coverage,samplename,input_peak):
-        subprocess.call('''computeMatrix scale-regions -S %s -R %s --missingDataAsZero -bs 10 -a 1000 -b 1000 -out %s --outFileNameMatrix %s'''%(coverage,samplename+'_gene_body_merge.bed',coverage+'gene_body'+'.matrix.gz',coverage+'gene_body'+'.matrix.txt'),shell=True)
-        subprocess.call('''plotHeatmap -m %s -out %s --legendLocation none'''%(coverage+'gene_body'+'.matrix.gz',coverage+'gene_body_heatmap.png'),shell=True)
+        subprocess.call('''computeMatrix scale-regions -S %s -R %s --missingDataAsZero -bs 10 -a 1000 -b 1000 -out %s --outFileNameMatrix %s 2>&1'''%(coverage,samplename+'_gene_body_merge.bed',coverage+'gene_body'+'.matrix.gz',coverage+'gene_body'+'.matrix.txt'),shell=True)
+        subprocess.call('''plotHeatmap -m %s -out %s --legendLocation none'''%(coverage+'gene_body'+'.matrix.gz','gene_body_heatmap.png'),shell=True)
 
         #peak heatmap
-        subprocess.call('''computeMatrix reference-point --referencePoint center -S %s -R %s --missingDataAsZero -bs 10 -a 1000 -b 1000 -out %s --outFileNameMatrix %s'''%(coverage,input_peak,coverage+'_peak'+'.matrix.gz',coverage+'_peak'+'.matrix.txt'),shell=True)
+        subprocess.call('''computeMatrix reference-point --referencePoint center -S %s -R %s --missingDataAsZero -bs 10 -a 1000 -b 1000 -out %s --outFileNameMatrix %s 2>&1'''%(coverage,input_peak,coverage+'_peak'+'.matrix.gz',coverage+'_peak'+'.matrix.txt'),shell=True)
 
-        #subprocess.call('''computeMatrix scale-regions -S %s -R %s --missingDataAsZero -bs 10 -a 1000 -b 1000 -out %s --outFileNameMatrix %s'''%(coverage,input_peak,coverage+'peak'+'.matrix.gz',coverage+'peak'+'.matrix.txt'),shell=True)
-        #subprocess.call('''plotHeatmap -m %s -out %s --legendLocation none'''%(coverage+'_peak'+'.matrix.gz',coverage+'_peak_heatmap.png'),shell=True)
-        #subprocess.call('''plotHeatmap --xAxisLabel "peak distance (bp)" --startLabel peak -m %s -out %s --legendLocation none'''%(coverage+'_peak'+'.matrix.gz',coverage+'_peak_heatmap2.png'),shell=True)
-        subprocess.call('''plotHeatmap --refPointLabel peak  --regionsLabel peaks --xAxisLabel 'peak distance(bp)' -m %s -out %s --legendLocation none'''%(coverage+'_peak'+'.matrix.gz',coverage+'_peak_heatmap.png'),shell=True)
+        subprocess.call('''plotHeatmap --refPointLabel peak  --regionsLabel peaks --xAxisLabel 'peak distance(bp)' -m %s -out %s --legendLocation none'''%(coverage+'_peak'+'.matrix.gz','Peak_heatmap.png'),shell=True)
 
 #Making annotation_peak_associate file
 def annotation_peak(input_peak,samplename):
@@ -143,7 +140,7 @@ def enrichment(input_peak,genome_bp,samplename):
         plt.xticks(annotationname_index, annotationname, fontsize='small')
         plt.ylabel("Fold Enrichment (log2)")
         plt.title('')
-        plt.savefig(input_peak+'.Fold_Enrichment.png',dpi=400,bbox_inches='tight')
+        plt.savefig('Fold_Enrichment.png',dpi=400,bbox_inches='tight')
         plt.close(fig)
         fe_table=pd.DataFrame([fold_enrich],columns=annotationname)
         fe_table.to_csv(input_peak+'_Fole_Enrichment_Table.txt', index=None, sep="\t")
