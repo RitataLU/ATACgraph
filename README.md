@@ -222,7 +222,7 @@ optional arguments:
    * heatmap, metaplot ATAC-seq abundance related to genes 
    * heatmap, metaplot ATAC-seq abundance related toand peaks
    
-   ![heatmap](https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png)
+   ![heatmap](https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png | width=100)
    
    * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
    
