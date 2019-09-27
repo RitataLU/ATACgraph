@@ -219,14 +219,28 @@ optional arguments:
 **Output:** 
 
 * Figures 
-   * heatmap, metaplot ATAC-seq abundance related to genes 
+   * heatmap, metaplot ATAC-seq abundance related to genes     * heatmap, metaplot ATAC-seq abundance related toand peaks
   
-   <img align="left" width="200" height="600" src="https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
+   <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
+
+   
+   <img align="right" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Peak_heatmap.png">
    
    
-   * heatmap, metaplot ATAC-seq abundance related toand peaks
    
-   <img align="right" width="200" height="600" src="https://github.com/RitataLU/ATACgraph/blob/master/Peak_heatmap.png">
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    
