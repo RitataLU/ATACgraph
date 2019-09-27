@@ -219,7 +219,12 @@ optional arguments:
 **Output:** 
 
 * Figures 
-   * heatmap, metaplot ATAC-seq abundance related to genes     * heatmap, metaplot ATAC-seq abundance related toand peaks
+   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
+   ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
+   
+   
+   * heatmap, metaplot ATAC-seq abundance related to genes     
+   * heatmap, metaplot ATAC-seq abundance related toand peaks
   
    <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph_v2/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
 
@@ -228,33 +233,7 @@ optional arguments:
    
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
-   ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
+
 
 *  text files
    * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
