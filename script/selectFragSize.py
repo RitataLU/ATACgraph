@@ -32,7 +32,7 @@ def selectRead (infile,outfile,selectMode,selectSize):
             if abs(read.template_length) < selectSize:
                 samout.write(read)
     else:
-        for read in bam:
+        for read in samfile:
             if abs(read.template_length) > selectSize:
                 samout.write(read)
 
@@ -44,7 +44,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('input_bam')
     parser.add_argument('output_bam')
-    parser.add_argument('-f','--filter',type=int,default=150,help='default=150')
+    parser.add_argument('-f','--filter',type=int,default=150,help='fragment length selectione, dfault=150')
     parser.add_argument('-m','--mode',type=int,default=1,help='Select fragments smaller [1] or larger [2] than filter size. Default=1')
     args = parser.parse_args()
     infile = args.input_bam
