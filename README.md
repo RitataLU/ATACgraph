@@ -32,7 +32,7 @@ pip install pybedtools
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
-$ pip install -r ATACgraph/.txt
+$ pip install -r ATACgraph/base.txt
 
 ``` 
 
@@ -47,7 +47,7 @@ $ vi ~/.bash_profile
    (2) Add ATAC-graph path to the PATH environment variable.
  
 ``` 
-$ PATH=$PATH:(ATAC-graph file path)
+$ PATH=$PATH:(ATACgraph file path)
 $ source ~/.bash_profile
 ```    
 
