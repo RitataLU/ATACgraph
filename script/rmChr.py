@@ -68,7 +68,7 @@ def main():
         print "Usage: python rmChr.py <input.bam> <output.bam> <chrM>"
         print ""
         print "If you need to remove multiple chromosomes, use comma"
-        print "to seperate. For example chrM,chrPt"
+        print "to separate. For example chrM,chrPt"
         sys.exit()
 
 #    infile = 'Ctrl_1.bam'
