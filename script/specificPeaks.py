@@ -17,6 +17,8 @@ def main():
     args = parser.parse_args()
     inNameA = args.input_nameAs
     inNameB = args.input_nameBs
+#    inNameA = 'hESC_Ctrl_1_rmMul,hESC_Ctrl_2_rmMul'
+#    inNameB = 'hESC_TKO_1_rmMul,hESC_TKO_2_rmMul'
     groupNameA = inNameA.split(',')
     groupNameB = inNameB.split(',')
     groupPeakA = [name + '.peak_peaks.narrowPeak' for name in groupNameA]
@@ -54,10 +56,18 @@ def main():
 #            df[bwFile] = [np.mean(bw.values(peak['chrom'],peak['start'] - 1,peak['end'])) for index,peak in df.iterrows()]
 
         df = df[df[groupBw].min(axis = 1) > 1]
-        df['fc'] = np.log2(df[groupBwA].mean(axis=1)/df[groupBwB].mean(axis=1))
-        df['pvalue'] = [ttest_ind(peak[groupBwA],peak[groupBwB],equal_var=False).pvalue for index,peak in df.iterrows()] 
-        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].iloc[:,0:3]
-        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].iloc[:,0:3]
+        df.loc[:,'fc'] = np.log2(df[groupBwA].mean(axis=1)/df[groupBwB].mean(axis=1))
+        df.loc[:,'pvalue'] = [ttest_ind(peak[groupBwA],peak[groupBwB],equal_var=False).pvalue for index,peak in df.iterrows()] 
+#        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].iloc[:,0:3]
+        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].copy()
+        peaksA.loc[:,'id'] = ['PeakA_'+str(i) for i in range(1,len(peaksA)+1)]
+        peaksA.loc[:,'fc2'] = ["%.2f" % var for var in peaksA.fc]
+        peaksA = peaksA[['chrom','start','end','id','fc2']]
+#        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].iloc[:,0:3]
+        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].copy()
+        peaksB.loc[:,'id'] = ['PeakB_'+str(i) for i in range(1,len(peaksB)+1)]
+        peaksB.loc[:,'fc2'] = ["%.2f" % var for var in peaksB.fc]
+        peaksB = peaksB[['chrom','start','end','id','fc2']]
 #        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)]
 #        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)]
 
