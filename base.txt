@@ -4,3 +4,4 @@ pysam
 matplotlib
 argparse
 pybedtools
+deepTools==3.3.0
