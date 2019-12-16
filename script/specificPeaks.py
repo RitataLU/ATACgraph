@@ -36,41 +36,26 @@ def main():
         warnings.simplefilter("ignore",category=FutureWarning)
         df = result.to_dataframe()
 
+    df = df[df.name >= min(lenPeakA,lenPeakB)]
+    for bwFile in groupBw:
+        bw = pyBigWig.open(bwFile)
+        df[bwFile] = [np.mean(bw.values(peak['chrom'],peak['start'] - 1,peak['end'])) for index,peak in df.iterrows()]
+
+    df = df[df[groupBw].min(axis = 1) > 1]
+    df.loc[:,'fc'] = np.log2(df[groupBwA].mean(axis=1)/df[groupBwB].mean(axis=1))
     if min(lenPeakA,lenPeakB) < 2:
-        specA = ','.join(str(x) for x in range(1,lenPeakA +1))
-        specB = ','.join(str(x) for x in range(lenPeakA +1,lenPeakA + lenPeakB +1))
-        peaksA = df[df.score == specA].iloc[:,0:3]
-        peaksB = df[df.score == specB].iloc[:,0:3]
-
+        df.loc[:,'pvalue'] = 0
     else:
-        df = df[df.name > 1]
-        for bwFile in groupBw:
-            bw = pyBigWig.open(bwFile)
-            df[bwFile] = [np.mean(bw.values(peak['chrom'],peak['start'] - 1,peak['end'])) for index,peak in df.iterrows()]
-#        for bwFile in groupBwA:
-#            bw = pyBigWig.open(bwFile)
-#            df[bwFile] = [np.mean(bw.values(peak['chrom'],peak['start'] - 1,peak['end'])) for index,peak in df.iterrows()]
-
- #       for bwFile in groupBwB:
-#            bw = pyBigWig.open(bwFile)
-#            df[bwFile] = [np.mean(bw.values(peak['chrom'],peak['start'] - 1,peak['end'])) for index,peak in df.iterrows()]
-
-        df = df[df[groupBw].min(axis = 1) > 1]
-        df.loc[:,'fc'] = np.log2(df[groupBwA].mean(axis=1)/df[groupBwB].mean(axis=1))
         df.loc[:,'pvalue'] = [ttest_ind(peak[groupBwA],peak[groupBwB],equal_var=False).pvalue for index,peak in df.iterrows()] 
-#        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].iloc[:,0:3]
-        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].copy()
-        peaksA.loc[:,'id'] = ['PeakA_'+str(i) for i in range(1,len(peaksA)+1)]
-        peaksA.loc[:,'fc2'] = ["%.2f" % var for var in peaksA.fc]
-        peaksA = peaksA[['chrom','start','end','id','fc2']]
-#        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].iloc[:,0:3]
-        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].copy()
-        peaksB.loc[:,'id'] = ['PeakB_'+str(i) for i in range(1,len(peaksB)+1)]
-        peaksB.loc[:,'fc2'] = ["%.2f" % var for var in peaksB.fc]
-        peaksB = peaksB[['chrom','start','end','id','fc2']]
-#        peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)]
-#        peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)]
 
+    peaksA = df[(df.fc >= 1) & (df.pvalue < 0.05)].copy()
+    peaksA.loc[:,'id'] = ['PeakA_'+str(i) for i in range(1,len(peaksA)+1)]
+    peaksA.loc[:,'fc2'] = ["%.2f" % var for var in peaksA.fc]
+    peaksA = peaksA[['chrom','start','end','id','fc2']]
+    peaksB = df[(df.fc <= -1) & (df.pvalue < 0.05)].copy()
+    peaksB.loc[:,'id'] = ['PeakB_'+str(i) for i in range(1,len(peaksB)+1)]
+    peaksB.loc[:,'fc2'] = ["%.2f" % var for var in peaksB.fc]
+    peaksB = peaksB[['chrom','start','end','id','fc2']]
     peaksA.to_csv(outBedA,sep="\t", index=False, header=None, quoting=csv.QUOTE_NONE)
     peaksB.to_csv(outBedB,sep="\t", index=False, header=None, quoting=csv.QUOTE_NONE)
 
