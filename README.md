@@ -21,6 +21,7 @@ pip install pysam==0.11.2.2
 pip install matplotlib
 pip install argparse
 pip install pybedtools
+pip install deepTools==3.3.0
 
 ```
 
