@@ -5,7 +5,8 @@ import imp
 
 ATACgraph_dir = os.path.dirname(os.path.abspath(__file__))
 
-subcommandlist=["rmChr","calFragDist","selectFragSize","junctionBed","gtftoBed","callPeak","specificPeaks","genePlot","seqCompare"]
+subcommandlist=["rmChr","calFragDist","selectFragSize","junctionBed","gtftoBed","callPeak","specificPeaks","genePlot","seqCompare","specificPeaks_galaxy"]
+
 
 if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
 
@@ -20,8 +21,8 @@ if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
 	print "callPeak          call ATAC-seq peaks"
 	print "specificPeaks     Find specific peaks between 2 peaks files"
 	print "genePlot          Generate figures of depicting gene accessibility"
-	print "seqCompare        Compare peaks between ATAC-seq and Other seq"
-	
+    	print "seqCompare        Compare peaks between ATAC-seq and Other seq"
+        print "specificPeaks_galaxy Find specific peaks between 2 peaks files"	
 	sys.exit()
 
 
