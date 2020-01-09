@@ -10,21 +10,31 @@ from scipy.stats import ttest_ind
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('input_nameAs',help='Sample names, seprate by comma')
-    parser.add_argument('input_nameBs',help='Sample names, seprate by comma')
+    parser.add_argument('input_peakAs',help='Peaks files, seprate by comma')
+    parser.add_argument('input_peakBs',help='Peaks files, seprate by comma')
+    parser.add_argument('input_bwAs',help='BigWig files, seprate by comma')
+    parser.add_argument('input_bwBs',help='BigWig files, seprate by comma')
     parser.add_argument('output_bedA')
     parser.add_argument('output_bedB')
     args = parser.parse_args()
-    inNameA = args.input_nameAs
-    inNameB = args.input_nameBs
+#    inNameA = args.input_nameAs
+#    inNameB = args.input_nameBs
+    inPeakA = args.input_peakAs
+    inPeakB = args.input_peakBs
+    inBwA = args.input_bwAs
+    inBwB = args.input_bwBs
 #    inNameA = 'hESC_Ctrl_1_rmMul,hESC_Ctrl_2_rmMul'
 #    inNameB = 'hESC_TKO_1_rmMul,hESC_TKO_2_rmMul'
-    groupNameA = inNameA.split(',')
-    groupNameB = inNameB.split(',')
-    groupPeakA = [name + '.peak_peaks.narrowPeak' for name in groupNameA]
-    groupPeakB = [name + '.peak_peaks.narrowPeak' for name in groupNameB]
-    groupBwA = [name + '_coverage.bw' for name in groupNameA]
-    groupBwB = [name + '_coverage.bw' for name in groupNameB]
+#    groupNameA = inNameA.split(',')
+#    groupNameB = inNameB.split(',')
+    groupPeakA = inPeakA.split(',')
+    groupPeakB = inPeakB.split(',')
+    groupBwA = inBwA.split(',')
+    groupBwB = inBwB.split(',')
+#    groupPeakA = [name + '.peak_peaks.narrowPeak' for name in groupNameA]
+#    groupPeakB = [name + '.peak_peaks.narrowPeak' for name in groupNameB]
+#    groupBwA = [name + '_coverage.bw' for name in groupNameA]
+#    groupBwB = [name + '_coverage.bw' for name in groupNameB]
     groupBw = groupBwA + groupBwB
     outBedA = args.output_bedA
     outBedB = args.output_bedB

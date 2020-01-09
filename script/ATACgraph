@@ -22,8 +22,8 @@ if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
 	print "specificPeaks     Find specific peaks between 2 peaks files"
 	print "genePlot          Generate figures of depicting gene accessibility"
     	print "seqCompare        Compare peaks between ATAC-seq and Other seq"
-        print "specificPeaks_galaxy Find specific peaks between 2 peaks files"	
-	sys.exit()
+	
+        sys.exit()
 
 
 tool = sys.argv[1]
