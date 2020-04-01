@@ -230,8 +230,10 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
-  -c, --FOLD CHANGE the default is greater than 2
-  -p, --P value default is less than 0.05
+  -c FOLD_CHANGE, --fold_change FOLD_CHANGE
+                        Fold change cutoff. Default:2
+  -p P_VALUE, --p_value P_VALUE
+                        P-value cutoff. Default:0.05
   
 ```
 **Output:** 
