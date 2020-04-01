@@ -218,7 +218,7 @@ To identify differentially accessible regions, ATACgraph utilizes peak BED files
 
 ```
 ATACgraph specificPeaks -h
-usage: specificPeaks [-h] input_peakAs input_peakBs input_bwAs input_bwBs output_bedA output_bedB
+usage: specificPeaks [-h] [-c FOLD_CHANGE] [-p P_VALUE]input_peakAs input_peakBs input_bwAs input_bwBs output_bedA output_bedB
 
 positional arguments:
   input_peakAs  Peak beds, seprate by comma
@@ -230,6 +230,9 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
+  -c, --FOLD CHANGE the default is greater than 2
+  -p, --P value default is less than 0.05
+  
 ```
 **Output:** 
 
