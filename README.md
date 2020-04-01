@@ -247,7 +247,7 @@ idr --samples 1. narrowPeak 2.narrowPeak --output-file idr.txt
 ```
 **Output:** 
 
-* A txt files, format information is in [IDR] (https://github.com/nboley/idr)
+* A txt files, format information are based on [IDR](https://github.com/nboley/idr)
 
 
 ## Comparing peaks between ATAC-seq and another Seq.
