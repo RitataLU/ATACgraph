@@ -240,6 +240,15 @@ optional arguments:
 
 * 2 ATAC-seq specific peaks BED files
 
+## IDR (Irreproducible Discovery Rate) for identifying differential enriched ATAC-seq peaks between two conditions.
+
+```
+idr --samples 1. narrowPeak 2.narrowPeak --output-file idr.txt
+```
+**Output:** 
+
+* A txt files, format information is in [IDR] (https://github.com/nboley/idr)
+
 
 ## Comparing peaks between ATAC-seq and another Seq.
 
