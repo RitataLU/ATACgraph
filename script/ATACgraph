@@ -5,7 +5,7 @@ import imp
 
 ATACgraph_dir = os.path.dirname(os.path.abspath(__file__))
 
-subcommandlist=["00_rmChr", "01_calFragDist","02_selectFragSize", "02_gtftoBed", "03_genePlot", "03_callPeak", "03_junctionBed", "04_specificPeaks","05_seqCompare"]
+subcommandlist=["00_rmChr", "01_calFragDist","02_selectFragSize", "02_gtftoBed", "03_genePlot", "03_callPeak", "03_junctionBed", "04_specificPeaks","04_specificPeaksIDR","04_specificPeaksPromoter","05_seqCompare"]
 
     
 
@@ -15,15 +15,17 @@ if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
         print "Usage: atacG <subcommand> [options]"
         print "atacG sub-commands include:"
         print ""
-        print "00_rmChr             Remove chrM,chrPt"
-        print "01_calFragDist       Generate figures of fragments size distribution & Fast Fourier transform"
-        print "02_selectFragSize    Select bam fragments size"       
-        print "02_gtftoBed          Transform gtf file to bed files"
-        print "03_callPeak          Call ATAC-seq peaks"
-        print "03_genePlot          Generate figures of depicting genes and peaks accessibility"
-        print "03_junctionBed       Generate junction bed track"       
-        print "04_specificPeaks     Identify specific peaks between 2 groups of peaks"      
-        print "05_seqCompare        Compare peaks between ATAC-seq and Other seq"
+        print "00_rmChr                  Remove chrM,chrPt"
+        print "01_calFragDist            Generate figures of fragments size distribution & Fast Fourier transform"
+        print "02_selectFragSize         Select bam fragments size"       
+        print "02_gtftoBed               Transform gtf file to bed files"
+        print "03_callPeak               Call ATAC-seq peaks"
+        print "03_genePlot               Generate figures of depicting genes and peaks accessibility"
+        print "03_junctionBed            Generate junction bed track"       
+        print "04_specificPeaks          Identify specific peaks between 2 groups of peaks"     
+        print "04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework"
+        print "04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks"
+        print "05_seqCompare             Compare peaks between ATAC-seq and Other seq"
 
         sys.exit()
 

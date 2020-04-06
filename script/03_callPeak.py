@@ -10,13 +10,13 @@ import argparse
 def main():
 	parser = argparse.ArgumentParser()
 	#1:integration site, 2:whole reads
-	parser.add_argument('-s', dest='separate', help="1: integration site; 2: whole fragment",type=int, default=2)
+	parser.add_argument('-s', dest='separate', help="1: integration site; 2: full-extend fragment",type=int, default=2)
 	parser.add_argument("-shift",help="shift size from integration site(bp), default: 50",dest='shift',default=50,type=int)
 	parser.add_argument("-ES",help="extend size from integration site (bp), default: 100",dest='extend',default=100,type=int)
 	parser.add_argument("-bs",help="bin size for bigwig (bp), default: 10",dest='binsize',default=10,type=int)
 	parser.add_argument('input_bam',help='input bam file',type=str)
 	parser.add_argument('output_name',help='name for output files',type=str)
-        parser.add_argument('gene_bed',help='Gene annotation bed file, either gene_body_bed6.bed or gene_promoter_bed6.bed',type=str)
+        parser.add_argument('gene_bed',help='Gene or promoter annotation bed file, either gene_body_bed6.bed or gene_promoter_bed6.bed',type=str)
 
 	args = parser.parse_args()
 
