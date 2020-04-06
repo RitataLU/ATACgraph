@@ -21,6 +21,7 @@ pip install numpy
 pip install pandas
 pip install pysam==0.11.2.2
 pip install matplotlib
+pip install matplotlib-venn
 pip install argparse
 pip install pybedtools
 pip install deepTools==3.3.0
@@ -52,6 +53,7 @@ $ vi ~/.bash_profile
 ``` 
 $ PATH=$PATH:(ATACgraph file path)
 $ source ~/.bash_profile
+$ sh base.txt
 ```    
 
 # Running ATACgraph
