@@ -43,7 +43,7 @@ $ sh ./base.txt
 
 2. Add your ATACgraph path to the PATH.
 
-   (1)  Edit bash profile
+(1)  Edit bash profile
   
 ``` 
 $ vi ~/.bash_profile
