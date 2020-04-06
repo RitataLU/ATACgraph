@@ -8,7 +8,7 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 
 # <a name="SystemRequirements"></a>System Requirements
 * Linux or Mac OS Environment
-* Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2 could be downloaded from http://www.python.org/download )
+* Python2.7 (it should be pre-installed in both Linux and Mac). Type 'Python' to see the installed version. Python2.7 could be downloaded from http://www.python.org/download )
 * [deepTools](https://deeptools.readthedocs.org/)
 * [BEDtools](http://bedtools.readthedocs.org/) 
 * [IDR](https://github.com/nboley/idr)
@@ -37,12 +37,13 @@ pip install -U scikit-learn
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
+$ sh ./base.txt
 
 ``` 
 
 2. Add your ATACgraph path to the PATH.
 
-   (1) Edit bash profile
+   (1)  Edit bash profile
   
 ``` 
 $ vi ~/.bash_profile
@@ -53,7 +54,7 @@ $ vi ~/.bash_profile
 ``` 
 $ PATH=$PATH:(ATACgraph file path)
 $ source ~/.bash_profile
-$ sh base.txt
+
 ```    
 
 # Running ATACgraph
