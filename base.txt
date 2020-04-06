@@ -1,8 +1,9 @@
-numpy
-pandas
-pysam
-matplotlib
-argparse
-pybedtools
-deepTools==3.3.0
-
+pip install numpy
+pip install pandas
+pip install pysam==0.11.2.2
+pip install matplotlib
+pip install matplotlib-venn
+pip install argparse
+pip install pybedtools
+pip install deepTools==3.3.0
+pip install -U scikit-learn
