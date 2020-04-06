@@ -24,6 +24,7 @@ pip install matplotlib
 pip install argparse
 pip install pybedtools
 pip install deepTools==3.3.0
+pip install -U scikit-learn
 
 ```
 
@@ -35,7 +36,6 @@ pip install deepTools==3.3.0
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
-$ pip install -r ATACgraph/base.txt
 
 ``` 
 
