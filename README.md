@@ -12,9 +12,12 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 * [deepTools](https://deeptools.readthedocs.org/)
 * [BEDtools](http://bedtools.readthedocs.org/) 
 * [IDR](https://github.com/nboley/idr)
+```
+IDR require 3.5
+```
+
 * [MACS2](https://github.com/taoliu/MACS)
 * Python Modules. To install the packages, use the following commands on an UNIX terminal:
-
 
 ```
 pip install numpy
@@ -65,17 +68,19 @@ $ source ~/.bash_profile
 ```
 $ ATACgraph -h
 Usage: atacG <subcommand> [options]
-atacG sub-commands include:
+ATACgraph sub-commands include:
 
-rmChr             Remove chrM,chrPt
-calFragDist       Generate figures of fragments size distribution & Fast Fourier transform
-selectFragSize    Select bam fragments size
-junctionBed       Generate junction bed track
-gtftoBed          Transform gtf file to bed files
-callPeak          call ATAC-seq peaks
-specificPeaks     Find specific peaks between 2 peaks files
-genePlot          Generate figures of depicting gene accessibility
-seqCompare        Compare peaks between ATAC-seq and Other seq
+00_rmChr                  Remove chrM,chrPt"
+01_calFragDist            Generate figures of fragments size distribution & Fast Fourier transform"
+02_selectFragSize         Select bam fragments size"
+02_gtftoBed               Transform gtf file to bed files"
+03_callPeak               Call ATAC-seq peaks"
+03_genePlot               Generate figures of depicting genes and peaks accessibility"
+03_junctionBed            Generate junction bed track"
+04_specificPeaks          Identify specific peaks between 2 groups of peaks"
+04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework"
+04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks"
+05_seqCompare             Compare peaks between ATAC-seq and Other seq"
 ```
 
 ## Filtering ATAC-seq reads from any chromosome 
@@ -84,7 +89,7 @@ seqCompare        Compare peaks between ATAC-seq and Other seq
 * ATAC-seq reads file in bam
 
 ```
-$ ATACgraph rmChr -h
+$ ATACgraph 00_rmChr -h
 Usage: python rmChr.py <input.bam> <output.bam> <chrM>
 
 If you need to remove multiple chromosomes, use comma
@@ -100,9 +105,11 @@ to seperate. For example chrM,chrPt
 **Input:**
 * ATAC-seq reads file in bam
 
+
+
 ```
-$ ATACgraph selectFragSize -h
-usage: selectFragSize [-h] [-f FILTER] [-m MODE] input_bam output_bam
+$ ATACgraph 02_selectFragSize -h
+usage: 02_selectFragSize [-h] [-f FILTER] [-m MODE] input_bam output_bam
 
 positional arguments:
   input_bam
@@ -128,7 +135,7 @@ optional arguments:
 * ATAC-seq bam file
 
 ```
-$ ATACgraph calFragDist -h
+$ ATACgraph 01_calFragDist -h
 usage: calFragDist [-h] input_bam output_name
 
 positional arguments:
