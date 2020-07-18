@@ -120,11 +120,11 @@ optional arguments:
 
    * fragment distribution
    
-   ![fragDist](https://github.com/RitataLU/ATACgraph/blob/master/Figures/FIg2_TKO_1_dis.pdf)
+   ![fragDist](https://github.com/RitataLU/ATACgraph/blob/master/fragDist.png)
    
    * fragment distribution FFT
    
-   ![FFT](https://github.com/RitataLU/ATACgraph/blob/master/Figures/Fig2_TKO_1_fft.pdf)
+   ![FFT](https://github.com/RitataLU/ATACgraph/blob/master/FFT.png)
 
 
 **Output:** 
@@ -285,9 +285,9 @@ optional arguments:
    * heatmap, metaplot ATAC-seq abundance related to genes     
    * heatmap, metaplot ATAC-seq abundance related toand peaks
   
-   <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Figures/Fig2_gene_body_heatmap.pdf">
+   <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
 
-   <img align="right" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Figures/Fig2_Peak_heatmap.pdf">
+   <img align="right" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Peak_heatmap.png">
    
 
 ```
@@ -369,7 +369,7 @@ optional arguments:
 * Venn diagram shows the numbers of each seq peaks and over lapping peaks with p value (hypergeometric test)
 * A gene list of overlapping peaks locations between 2 seq
 
-![Venn](https://github.com/RitataLU/ATACgraph/blob/master/Figures/Fig3_Venndiagram_TKO1_ChIP.pdf)
+![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 
 
 
