@@ -249,46 +249,6 @@ To identify differentially accessible regions, ATACgraph utilizes peak BED files
 * 2 ATAC-seq peaks BDE files
 * 2 ATAC-seq abundandance BigWig files
 
-## Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
-To investigate the chromatin accessibility around genes, To investigate the chromatin accessibility around genes, ATACgraph uses the files describing the ATAC-seq peak locations and gene annotations for two types of analyse. This step requires 8 genomic feature BED files, user should run gtftoBed before this step.
-
-**Input:**
-* ATAC-seq bam file
-
-```
-ATACgraph 03_genePlot -h
-usage: genePlot [-h] [-p PROMOTER] input_peak input_bigwig gtf_name
-
-positional arguments:
-  input_peak
-  input_bigwig
-  gtf_name
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -p PROMOTER, --promoter PROMOTER
-  
-
-```
-
-**Output:** 
-*  text files
-   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
-   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
-   * The intersection site between 8 genomic features and peaks (8 files)
-   
-* Figures 
-   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
-   ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
-   
-   
-   * heatmap, metaplot ATAC-seq abundance related to genes     
-   * heatmap, metaplot ATAC-seq abundance related toand peaks
-  
-   <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
-
-   <img align="right" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Peak_heatmap.png">
-   
 
 ```
 ATACgraph 04_specificPeaks -h
@@ -372,6 +332,46 @@ optional arguments:
 ![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 
 
+## Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
+To investigate the chromatin accessibility around genes, To investigate the chromatin accessibility around genes, ATACgraph uses the files describing the ATAC-seq peak locations and gene annotations for two types of analyse. This step requires 8 genomic feature BED files, user should run gtftoBed before this step.
+
+**Input:**
+* ATAC-seq bam file
+
+```
+ATACgraph 03_genePlot -h
+usage: genePlot [-h] [-p PROMOTER] input_peak input_bigwig gtf_name
+
+positional arguments:
+  input_peak
+  input_bigwig
+  gtf_name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROMOTER, --promoter PROMOTER
+  
+
+```
+
+**Output:** 
+*  text files
+   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
+   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
+   * The intersection site between 8 genomic features and peaks (8 files)
+   
+* Figures 
+   * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
+   ![Enrichment](https://github.com/RitataLU/ATACgraph_v2/blob/master/FoldEnrichment.png)
+   
+   
+   * heatmap, metaplot ATAC-seq abundance related to genes     
+   * heatmap, metaplot ATAC-seq abundance related toand peaks
+  
+   <img align="left" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/TKO.integ_coverage.bwgene_body_heatmap.png">
+
+   <img align="right" width="300" height="900" src="https://github.com/RitataLU/ATACgraph/blob/master/Peak_heatmap.png">
+   
 
 
 
