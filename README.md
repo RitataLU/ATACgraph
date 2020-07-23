@@ -34,7 +34,7 @@ pip install -U scikit-learn
 
 # Installation
 ## Docker 
-Link: https://hub.docker.com/r/lsb nb/galaxy_atacgraph
+Link: https://hub.docker.com/r/lsbnb/galaxy_atacgraph
 
 ## or 
 ## Linux Command 
