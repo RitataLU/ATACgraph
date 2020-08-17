@@ -17,11 +17,10 @@ IDR require python 3.5
 ```
 
 * [MACS2](https://github.com/taoliu/MACS)
-* Python Modules. To install the packages, use the following commands on an UNIX terminal:
+* Python Modules. 
 
-```
-pip install numpy
-pip install pandas
+** [Numpy] (https://github.com/numpy/numpy)
+** [pandas](https://github.com/pandas-dev/pandas)
 pip install pysam==0.11.2.2
 pip install matplotlib
 pip install matplotlib-venn
