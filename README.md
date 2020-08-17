@@ -43,7 +43,7 @@ Link: https://hub.docker.com/r/lsbnb/galaxy_atacgraph
 
 ```
 $ git clone https://github.com/RitataLU/ATACgraph.git
-$ sh ./base.txt
+$ sudo sh ./base.txt
 
 ``` 
 
