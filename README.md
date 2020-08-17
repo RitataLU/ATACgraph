@@ -55,10 +55,10 @@ $ sh ./base.txt
 $ vi ~/.bash_profile
 ``` 
    
-   (2) Add ATAC-graph path to the PATH environment variable.
+   (2) Add ATAC-graph/script path to the PATH environment variable.
  
 ``` 
-$ PATH=$PATH:(ATACgraph file path)
+$ PATH=$PATH:(ATACgraph/script file path)
 $ source ~/.bash_profile
 
 ```    
@@ -73,17 +73,17 @@ $ ATACgraph -h
 Usage: atacG <subcommand> [options]
 ATACgraph sub-commands include:
 
-00_rmChr                  Remove chrM,chrPt"
-01_calFragDist            Generate figures of fragments size distribution & Fast Fourier transform"
-02_selectFragSize         Select bam fragments size"
-02_gtftoBed               Transform gtf file to bed files"
+00_rmChr                  Remove chrM,chrPt
+01_calFragDist            Generate figures of fragments size distribution & Fast Fourier transform
+02_selectFragSize         Select bam fragments size
+02_gtftoBed               Transform gtf file to bed files
 03_callPeak               Call ATAC-seq peaks"
-03_genePlot               Generate figures of depicting genes and peaks accessibility"
-03_junctionBed            Generate junction bed track"
-04_specificPeaks          Identify specific peaks between 2 groups of peaks"
-04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework"
-04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks"
-05_seqCompare             Compare peaks between ATAC-seq and Other seq"
+03_genePlot               Generate figures of depicting genes and peaks accessibility
+03_junctionBed            Generate junction bed track
+04_specificPeaks          Identify specific peaks between 2 groups of peaks
+04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework
+04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks
+05_seqCompare             Compare peaks between ATAC-seq and Other seq
 ```
 
 ## Filtering ATAC-seq reads from any chromosome 
