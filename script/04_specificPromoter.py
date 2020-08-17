@@ -37,6 +37,11 @@ def main():
     outBedA = args.output_bedA
     outBedB = args.output_bedB
     df = pd.read_csv(bed,sep="\t",header=None,names=['chrom','start','end','id'],usecols=[0,1,2,3])
+    df = df.dropna()
+    #remove chromosome that are not in bw
+    bw0 = pyBigWig.open(groupBw[0])
+    chrs = bw0.chroms().keys()
+    df = df[df.chrom.isin(chrs)]
     for bwFile in groupBw:
         bw = pyBigWig.open(bwFile)
         df[bwFile] = [np.mean(bw.values(gene['chrom'],gene['start'] - 1,gene['end'])) for index,gene in df.iterrows()]  

@@ -12,7 +12,7 @@ subcommandlist=["00_rmChr", "01_calFragDist","02_selectFragSize", "02_gtftoBed",
 
 if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
 
-        print "Usage: atacG <subcommand> [options]"
+        print "Usage: ATACgraph <subcommand> [options]"
         print "atacG sub-commands include:"
         print ""
         print "00_rmChr                  Remove chrM,chrPt"

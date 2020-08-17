@@ -116,8 +116,8 @@ def main():
 
 	subprocess.call('''bedtools sort -i %s|bedtools merge -c 4,5,6 -o collapse,collapse,collapse >%s '''%(outname+'_gene_igr'+'_bed6.bed',outname+'_gene_igr'+'_merge.bed'),shell=True)
 
-
-        subprocess.call('''rm *3utr.bed|rm *5utr.bed |rm *_cds.bed|rm *_exons.bed|rm *_igr.bed|rm *_introns.bed ''',shell=True)
+        subprocess.call('''rm *3utr_bed6.bed |rm *cds_bed6.bed | rm *5utr_bed6.bed | rm *exons_bed6.bed | rm *gene_igr_bed6.bed | rm *introns_bed6.bed |rm *3utr.bed|rm *5utr.bed |rm *_cds.bed|rm *_exons.bed|rm *_igr.bed|rm *_introns.bed ''',shell=True)
+        #subprocess.call('''rm *3utr.bed|rm *5utr.bed |rm *_cds.bed|rm *_exons.bed|rm *_igr.bed|rm *_introns.bed ''',shell=True)
 
 if __name__ == '__main__':
     main()

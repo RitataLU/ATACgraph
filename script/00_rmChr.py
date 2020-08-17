@@ -65,7 +65,7 @@ def rmChr (infile,outfile,targetChr):
 
 def main():
     if len(sys.argv) != 4:
-        print "Usage: python rmChr.py <input.bam> <output.bam> <chrM>"
+        print "Usage: python 00_rmChr <input.bam> <output.bam> <chrM>"
         print ""
         print "If you need to remove multiple chromosomes, use comma"
         print "to separate. For example chrM,chrPt"
