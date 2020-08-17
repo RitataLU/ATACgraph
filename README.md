@@ -17,19 +17,17 @@ IDR require python 3.5
 ```
 
 * [MACS2](https://github.com/taoliu/MACS)
-* Python Modules. 
-
-** [Numpy] (https://github.com/numpy/numpy)
-** [pandas](https://github.com/pandas-dev/pandas)
-pip install pysam==0.11.2.2
-pip install matplotlib
-pip install matplotlib-venn
-pip install argparse
-pip install pybedtools
-pip install deepTools==3.3.0
-pip install -U scikit-learn
-
-```
+* Python Modules:
+  * Numpy
+  * pandas
+  * pysam==0.11.2.2
+  * matplotlib
+  * matplotlib-venn
+  * argparse
+  * pybedtools
+  * deepTools==3.3.0
+  * scikit-learn
+  
 
 # Installation
 ## Docker 
