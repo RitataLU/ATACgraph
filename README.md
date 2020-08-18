@@ -9,7 +9,7 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 # <a name="SystemRequirements"></a>System Requirements
 * Linux or Mac OS Environment
 * Python 2.7
-* [deepTools](https://deeptools.readthedocs.org/)
+* deepTools 3.3.0
 * [BEDtools](http://bedtools.readthedocs.org/) 
 * [IDR](https://github.com/nboley/idr)
 ```
