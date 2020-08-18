@@ -311,7 +311,7 @@ optional arguments:
 
 ```
 ATACgraph  05_seqCompare -h
-usage: seqCompare [-h] atac_peak other_peak ATAC_name otherPeak_name overPeak overlap_name Genome_size genes
+usage: seqCompare [-h] atac_peak other_peak ATAC_name otherPeak_name overlap_name Genome_size genes
 
 positional arguments:
   atac_peak       ATAC-seq peak bed
