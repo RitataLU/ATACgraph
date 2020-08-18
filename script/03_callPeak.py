@@ -40,8 +40,6 @@ def main():
 		#Making bigwig/ bamcoverage limit: cannot use minus
                 #subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsingRPKM --Offset 1 20 -o %s 2>&1'''%(input_bam, input_bam+'_coverage.bw'),shell=True
                 subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsingRPKM --Offset 1 20 -o %s 2>&1'''%(input_bam, bs, Outname+'_coverage.bw'),shell=True)
-#                subprocess.call('''bedtools -a %s -b %s -wa -wo '''%(Outname+'.peak',gene,Outname+'peak_Gene_list.txt'),shell=True)
-         #       subprocess.call('''bedtools intersect -wo -a %s -b %s >%s '''%(gene,Outname+'_peaks.narrowPeak',Outname+'_peak_gene_list.txt'),shell=True)
 
         elif (args.separate == 2):
         
@@ -51,8 +49,6 @@ def main():
                 #Making bam coverage
                 #subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsing RPKM -e -o %s 2>&1'''%(input_bam, bs, Outname+'_coverage.bw'),shell=True)
                 subprocess.call('''bamCoverage -b %s -bs %s --normalizeUsingRPKM -e -o %s 2>&1'''%(input_bam, bs, Outname+'_coverage.bw'),shell=True)
-	       # subprocess.call('''bedtools -a %s -b %s -wa -wo '''%(Outname+'.peak',gene,Outname+'peak_Gene_list.txt'),shell=True)
-        #        subprocess.call('''bedtools intersect -wo -a %s -b %s >%s '''%(gene,Outname+'_peaks.narrowPeak',Outname+'_peak_gene_list.txt'),shell=True)
 
 	else:
 
@@ -67,7 +63,7 @@ def main():
         g1.columns=['chr','sta','end','gene','score','dir','chrp','sta_p','end_p','peakname','score_p','strand', 'signalValue','pval','qValue','peak','overlap']
 
 
-        g1['Peak']="("+g1['chrp']+":"+g1['sta_p'].astype(str)+"-"+g1['end_p'].astype(str)+')'
+	g1['Peak']='('+g1['chrp'].astype(str)+':'+g1['sta_p'].astype(str)+'-'+g1['end_p'].astype(str)+')'
 
         g2 = g1[['chr','sta','end','gene','Peak']]
         g2.to_csv(Outname+'_peak_gene_list.txt',sep="\t",index = None)
