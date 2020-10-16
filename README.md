@@ -103,11 +103,14 @@ If you need to remove multiple chromosomes, use comma
 to seperate. For example chrM,chrPt
 
 ```
+**Output:**
+* ATAC-seq bam file after removing mitochondria chromosome
 
 ## Fragment length distribution and Fast Fourier Transform (FFT)
 
 **Input:**
-* ATAC-seq bam file
+* ATAC-seq bam file after removing mitochondria chromosome
+
 
 ```
 $ ATACgraph 01_calFragDist -h
@@ -167,7 +170,7 @@ optional arguments:
 ## Transform GTF file to BED files
 
 **Input:**
-* Annotation GTF file
+* ATAC-seq bam file after removing mitochondria chromosome
 
 ```
 $ ATACgraph 02_gtftoBed -h
@@ -184,14 +187,14 @@ optional arguments:
 ```
 
 **Output:** 
-* 8 BED file (promoter,gene,exon,intron,utr5,cds,utr3,igr) for the generating metagene plots, fold enrichment analysis 
+* 11 BED file (promoter,gene,exon,intron,utr5,cds,utr3,igr) for the generating metagene plots, fold enrichment analysis 
 
 
 
 ## Generating fragment size tracks 
 
 **Input:**
-* ATAC-seq bam file
+* ATAC-seq bam file after removing mitochondria chromosome
 
 ```
 ATACgraph 03_junctionBed -h
@@ -237,7 +240,7 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
-  -s SEPARATE   1: integration site; 2: full-extend fragment
+  -s SEPARATE   1: integration site; 2: full-extend fragment,default=2
   -shift SHIFT  shift size from integration site(bp), default: 50
   -ES EXTEND    extend size from integration site (bp), default: 100
   -bs BINSIZE   bin size for bigwig (bp), default: 10
