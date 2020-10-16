@@ -124,9 +124,9 @@ ATACgraph 03_callPeak demo_rmM.bam demo_rmM_peakcall demo_gene_body_bed6.bed
 ```
 
 **Output:** 
-* Peak location BED file (demo_rmM_peakcall.narrowpeak), 
-* Peak intensity bigWigfile (demo_rmM_peakcall.coverage.bw) 
-* A genes list of overlapping with peaks locations ()
+* Peak location BED file (demo_rmM_peakcall_peaks.narrowPeak), 
+* Peak intensity bigWigfile (demo_rmM_peakcall_coverage.bw) 
+* A genes list of overlapping with peaks locations (demo_rmM_peakcall_peak_gene_list.txt)
 
 
 
@@ -138,15 +138,28 @@ To investigate the chromatin accessibility around genes, To investigate the chro
 * ATAC-seq bam file after removing mitochondria chromosome 
 
 ```
-ATACgraph 03_genePlot demo_rmM_peakcall.narrowpeak demo_rmM_peakcall.coverage.bw demo_gene 
+ATACgraph 03_genePlot demo_rmM_peakcall.narrowpeak demo_rmM_peakcall_coverage.bw demo 
   
 ```
 
 **Output:** 
+* 3 Figures
+  * The enrichment status of accessible region in genome (Fold_Enrichment.pdf)
+  * The accessibility – or read abundance – around genes (gene_body_heatmap.pdf)
+  * The accessibility – or read abundance – around peaks (Peak_heatmap.pdf)
+  
 *  text files
-   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
-   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
-   * The intersection site between 8 genomic features and peaks (8 files)
+   * value of Heatmap depicting accessibility for gene (demo_rmM_peakcall_coverage.bwgene_body.matrix.txt & demo_rmM_peakcall_coverage.bwgene_body.matrix.gz)
+   * value of Heatmap depicting accessibility for peak (demo_rmM_peakcall_coverage.bw_peak.matrix.txt & demo_rmM_peakcall_coverage.bw_peak.matrix.gz)
+   * The value to generate enrichment figure(demo_rmM_peakcall_peaks.narrowPeak_Fole_Enrichment_Table.txt)  
+   * The intersection site between 8 genomic features and peaks: 
+     * demo_rmM_peakcall_peaks.narrowPeak_3utr.txt,demo_rmM_peakcall_peaks.narrowPeak_exons.txt                  
+     * demo_rmM_peakcall_peaks.narrowPeak_gene_igr.txt
+     * demo_rmM_peakcall_peaks.narrowPeak_5utr.txt         
+     * demo_rmM_peakcall_peaks.narrowPeak_gene_promoter.txt
+     * demo_rmM_peakcall_peaks.narrowPeak_cds.txt   
+     * demo_rmM_peakcall_peaks.narrowPeak_gene_body.txt             
+     * demo_rmM_peakcall_peaks.narrowPeak_introns.txt
 
 
 
