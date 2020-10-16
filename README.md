@@ -2,6 +2,7 @@
 
 ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 11 analyses in 9 major modules to profile (epi)genome. 
 
+
 # ATACgraph Pipeline
 ![ATACgraph flow](https://github.com/RitataLU/ATACgraph_v2/blob/master/ATACgraph%20flow.png)
 
@@ -29,6 +30,10 @@ IDR require python 3.5
   * deepTools==3.3.0
   * scikit-learn
   
+# Tutorial 
+For example use case, pleas follow the tutorial
+* [Tutorial] (https://github.com/RitataLU/ATACgraph/blob/master/Tutorial.md)
+
 
 # Installation
 ## Docker 
