@@ -31,13 +31,13 @@ IDR require python 3.5
   * scikit-learn
   
 # Tutorial 
-For example use case, pleas follow the tutorial
+Please follow the tutorial of example use case
 * [Tutorial](https://github.com/RitataLU/ATACgraph/blob/master/Tutorial.md)
 
 
 # Installation
-## Docker 
-Link: https://hub.docker.com/r/lsbnb/galaxy_atacgraph
+## Docker version
+* [ATACgraph Galaxy]（https://hub.docker.com/r/lsbnb/galaxy_atacgraph）
 
 ## or 
 ## Linux Command 
@@ -97,7 +97,7 @@ ATACgraph sub-commands include:
 
 ```
 $ ATACgraph 00_rmChr -h
-Usage: python rmChr.py <input.bam> <output.bam> <chrM>
+Usage: 00_rmChr <input.bam> <output.bam> <chrM>
 
 If you need to remove multiple chromosomes, use comma
 to seperate. For example chrM,chrPt
@@ -111,11 +111,13 @@ to seperate. For example chrM,chrPt
 
 ```
 $ ATACgraph 01_calFragDist -h
-usage: calFragDist [-h] input_bam output_name
+usage: 01_calFragDist [-h]  input_bam fragment_distribution_outname
+                      fragment_fft_outname
 
 positional arguments:
   input_bam
-  output_name
+  fragment_distribution_outname
+  fragment_fft_outname
 
 optional arguments:
   -h, --help   show this help message and exit
