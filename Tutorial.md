@@ -34,11 +34,120 @@ Download the demo input file in ATACgraph folder
 $ cd ATACgraph/demo
 $ tar -xvf demo.tar.gz 
 ``` 
-### remove mitochondria chrmosome
+### Remove mitochondria chrmosome
 
+**Input:**
+* ATAC-seq bam file
 ``` 
-$ ATACgraph 00_rmChr hESC_TKO_chr22.bam hESC_TKO_chr22_rmM.bam chrM
+$ ATACgraph 00_rmChr demo.bam demo_rmM.bam chrM
 ```
+**Output:**
+* ATAC-seq bam file after removing mitochondria chromosome named demo_rmM.bam
 
 ## Fragment length distribution and Fast Fourier Transform (FFT)
+
+**Input:**
+* ATAC-seq bam file after removing mitochondria chromosome
+
+```
+$ ATACgraph 01_calFragDist demo_rmM.bam demo_rmM_fragment demo_rmM_FFT
+
+```
+              
+**Output:** 
+* 2 figures (demo_rmM_fragment.png & demo_rmM_FFT.png)
+
+
+## Selectiing fragments size 
+
+**Input:**
+* ATAC-seq bam file after removing mitochondria chromosome
+
+```
+$ samtools index demo_rmM.bam
+$ ATACgraph 02_selectFragSize demo_rmM.bam demo_rmM_output.bam [-f 150] [-m 1]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILTER, --filter FILTER
+                        default=150
+  -m MODE, --mode MODE  Select fragments smaller [1] or larger [2] than filter
+                        size. Default=1                       
+
+```
+**Output:** 
+* demo_rmM_output.bam
+
+
+## Transform GTF file to BED files
+
+**Input:**
+* Annotation GTF file
+
+```
+$ ATACgraph 02_gtftoBed demo_gene.gtf demo [-p 2000]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROMOTER,          --promoter PROMOTER, promoter region from gene transcript start site (TSS) default = 2000
+                        
+```
+
+**Output:** 
+* 11 BED file (promoter,gene,exon,intron,utr5,cds,utr3,igr) for the generating metagene plots, fold enrichment analysis 
+
+
+
+## Generating fragment size tracks 
+
+**Input:**
+* ATAC-seq bam file after removing mitochondria chromosome
+
+```
+ATACgraph 03_junctionBed demo_rmM.bam demo_rmM_junction_output.bed
+
+```
+
+**Output:** 
+
+* A track BED file named demo_rmM_junction_output.bed for visualizing on IGV
+
+
+##  ATAC-seq peak calling
+
+**Input:**
+* ATAC-seq bam file after removing mitochondria chromosome
+
+```
+ATACgraph 03_callPeak demo_rmM.bam demo_rmM_peakcall demo_gene_body_bed6.bed
+  
+```
+
+**Output:** 
+* Peak location BED file (demo_rmM_peakcall.narrowpeak), 
+* Peak intensity bigWigfile (demo_rmM_peakcall.coverage.bw) 
+* A genes list of overlapping with peaks locations ()
+
+
+
+
+## Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
+To investigate the chromatin accessibility around genes, To investigate the chromatin accessibility around genes, ATACgraph uses the files describing the ATAC-seq peak locations and gene annotations for two types of analyse. This step requires 8 genomic feature BED files, user should run gtftoBed before this step.
+
+**Input:**
+* ATAC-seq bam file after removing mitochondria chromosome 
+
+```
+ATACgraph 03_genePlot demo_rmM_peakcall.narrowpeak demo_rmM_peakcall.coverage.bw demo_gene 
+  
+```
+
+**Output:** 
+*  text files
+   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
+   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
+   * The intersection site between 8 genomic features and peaks (8 files)
+
+
+
 
