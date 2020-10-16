@@ -153,7 +153,8 @@ ATACgraph 03_genePlot demo_rmM_peakcall.narrowpeak demo_rmM_peakcall_coverage.bw
    * value of Heatmap depicting accessibility for peak (demo_rmM_peakcall_coverage.bw_peak.matrix.txt & demo_rmM_peakcall_coverage.bw_peak.matrix.gz)
    * The value to generate enrichment figure(demo_rmM_peakcall_peaks.narrowPeak_Fole_Enrichment_Table.txt)  
    * The intersection site between 8 genomic features and peaks: 
-     * demo_rmM_peakcall_peaks.narrowPeak_3utr.txt,demo_rmM_peakcall_peaks.narrowPeak_exons.txt                  
+     * demo_rmM_peakcall_peaks.narrowPeak_3utr.txt
+     * demo_rmM_peakcall_peaks.narrowPeak_exons.txt                  
      * demo_rmM_peakcall_peaks.narrowPeak_gene_igr.txt
      * demo_rmM_peakcall_peaks.narrowPeak_5utr.txt         
      * demo_rmM_peakcall_peaks.narrowPeak_gene_promoter.txt
