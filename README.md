@@ -32,7 +32,7 @@ IDR require python 3.5
   
 # Tutorial 
 For example use case, pleas follow the tutorial
-* [Tutorial] (https://github.com/RitataLU/ATACgraph/blob/master/Tutorial.md)
+* [Tutorial](https://github.com/RitataLU/ATACgraph/blob/master/Tutorial.md)
 
 
 # Installation
