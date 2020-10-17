@@ -37,10 +37,10 @@ Please follow the tutorial of example use case
 
 # Installation
 ## Docker version
-* [ATACgraph Galaxy]（https://hub.docker.com/r/lsbnb/galaxy_atacgraph）
+* [ATACgraph Galaxy](https://hub.docker.com/r/lsbnb/galaxy_atacgraph)
 
-## or 
-## Linux Command 
+ 
+## Linux Command Version
 1. Download the source code and install the requirements.
 
 
@@ -367,10 +367,25 @@ optional arguments:
 ```
 
 **Output:** 
+* 3 Figures
+  * The enrichment status of accessible region in genome (Fold_Enrichment.pdf)
+  * The accessibility – or read abundance – around genes (gene_body_heatmap.pdf)
+  * The accessibility – or read abundance – around peaks (Peak_heatmap.pdf)
+
 *  text files
-   * value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
-   * value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
+   * The value of Heatmap depicting accessibility for gene (genebody.matrix.txt & genebody.matrix.gz)
+   * The value of Heatmap depicting accessibility for peak (peak.matrix.txt & peak.matrix.gz)
    * The intersection site between 8 genomic features and peaks (8 files)
+     * peakcall_peaks.narrowPeak_3utr.txt
+     * peakcall_peaks.narrowPeak_exons.txt                  
+     * peakcall_peaks.narrowPeak_gene_igr.txt
+     * peakcall_peaks.narrowPeak_5utr.txt         
+     * peakcall_peaks.narrowPeak_gene_promoter.txt
+     * peakcall_peaks.narrowPeak_cds.txt   
+     * peakcall_peaks.narrowPeak_gene_body.txt             
+     * peakcall_peaks.narrowPeak_introns.txt
+
+
    
 * Figures 
    * Fold enrichment analysis of open regions in genomic features (.Fold_Enrichment.png)
