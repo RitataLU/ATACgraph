@@ -5,7 +5,7 @@ import imp
 
 ATACgraph_dir = os.path.dirname(os.path.abspath(__file__))
 
-subcommandlist=["00_rmChr", "01_calFragDist","02_selectFragSize", "02_gtftoBed", "03_genePlot", "03_callPeak", "03_junctionBed", "04_specificPeaks","04_specificPeaksIDR","04_specificPeaksPromoter","05_seqCompare"]
+subcommandlist=["00_rmChr", "01_calFragDist","02_selectFragSize", "02_gtftoBed", "03_genePlot", "03_callPeak", "03_junctionBed", "04_specificPeaks","04_specificPeaksIDR","04_specificPeaksPromoter","05_seqCompare","05_compareToRNA"]
 
     
 
@@ -26,7 +26,7 @@ if len(sys.argv) ==1 or sys.argv[1]== "-h" or sys.argv[1] not in subcommandlist:
         print "04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework"
         print "04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks"
         print "05_seqCompare             Compare peaks between ATAC-seq and Other seq"
-
+        print "05_compareToRNA           Comparison of accessible genes and genes expression"
         sys.exit()
 
 
