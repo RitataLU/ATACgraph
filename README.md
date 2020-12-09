@@ -357,25 +357,22 @@ optional arguments:
 * ATAC-seq peaks BED file & another seq peaks file
 
 ```
-ATACgraph  05_seqCompare -h
-usage: seqCompare [-h] atac_peak other_peak ATAC_name otherPeak_name overlap_name Genome_size genes
+ATACgraph  05_compareRNA -h
+sage: 05_compareRNA.py [-h] [-b BINS] atac_gene RNA_seq outVenn outBar
 
 positional arguments:
-  atac_peak       ATAC-seq peak bed
-  other_peak      Other seq peak bed
-  ATAC_name       Name for ATAC peak
-  otherPeak_name  Name for other peak
-  overlap_name    Name for overlapping peak
-  Genome_size     Genome size(bp)
-  genes           Gene or promoter annotation file with bed6.bed format
+  atac_gene             ATAC-seq peak containing genes in bed
+  RNA_seq               Expression table
+  outVenn               Venn diagram output file name
+  outBar                Barplot output file name
 
 optional arguments:
-  -h, --help      show this help message and exit
+  -h, --help            show this help message and exit
+  -b BINS, --bins BINS  Number of bins; default 10
 ```
 **Output:** 
-* An overlapping peaks location BED file 
-* Venn diagram shows the numbers of each seq peaks and over lapping peaks with p value (hypergeometric test)
-* A gene list of overlapping peaks locations between 2 seq
+* A barplot shows percentage of accessible genes in each expression group.
+* Venn diagram shows the overlapping genes between accessible regions and highly or lowly expression genes
 
 ![Barplot](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 ![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
