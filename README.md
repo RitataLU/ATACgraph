@@ -69,6 +69,13 @@ $ source ~/.bash_profile
 
 # Running ATACgraph
 
+## Filtering reads overlapped with blacklist region
+Users can filter reads by this command before running ATACgraph if they have a blacklist.
+
+```
+bedtools intersect -v -abam input.bam -b hg19_blacklist.bed > output.bam
+```
+
 ## ATACgraph modules 
 
 
@@ -89,12 +96,6 @@ ATACgraph sub-commands include:
 04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks
 05_seqCompare             Compare peaks between ATAC-seq and Other seq
 05_compareToRNA           Comparison of accessible genes and genes expression
-```
-## Filtering reads overlapped with blacklist region
-Users can filter reads by the command before use ATACgraph if they have a blacklist.
-
-```
-bedtools intersect -v -abam input.bam -b hg19_blacklist.bed > output.bam
 ```
 
 ## Filtering ATAC-seq reads from any chromosome 
