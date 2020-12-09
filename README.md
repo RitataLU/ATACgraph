@@ -1,10 +1,10 @@
 # ATACgraph
 
-ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 11 analyses in 9 major modules to profile (epi)genome. 
+ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 12 analyses to profile (epi)genome. 
 
 
 # ATACgraph Pipeline
-![ATACgraph flow](https://github.com/RitataLU/ATACgraph_v2/blob/master/ATACgraph%20flow.png)
+![ATACgraph](https://github.com/RitataLU/ATACgraph/blob/master/Figures/ATACgraph-Main.png)
 
 
 
@@ -88,6 +88,13 @@ ATACgraph sub-commands include:
 04_specificPeaksIDR       Identify specific peaks with Irreproducibility Discovery Rate (IDR) framework
 04_specificPromoter       Identify specific promoter using Gaussian Mixture Model between 2 groups of peaks
 05_seqCompare             Compare peaks between ATAC-seq and Other seq
+05_compareToRNA           Comparison of accessible genes and genes expression
+```
+## Filtering reads overlapped with blacklist region
+Users can filter reads by the command before use ATACgraph if they have a blacklist.
+
+```
+bedtools intersect -v -abam input.bam -b hg19_blacklist.bed > output.bam
 ```
 
 ## Filtering ATAC-seq reads from any chromosome 
@@ -341,6 +348,35 @@ optional arguments:
 * Venn diagram shows the numbers of each seq peaks and over lapping peaks with p value (hypergeometric test)
 * A gene list of overlapping peaks locations between 2 seq
 
+![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
+
+## Comparing peaks between ATAC-seq and another Seq.
+
+**Input:**
+* ATAC-seq peaks BED file & another seq peaks file
+
+```
+ATACgraph  05_seqCompare -h
+usage: seqCompare [-h] atac_peak other_peak ATAC_name otherPeak_name overlap_name Genome_size genes
+
+positional arguments:
+  atac_peak       ATAC-seq peak bed
+  other_peak      Other seq peak bed
+  ATAC_name       Name for ATAC peak
+  otherPeak_name  Name for other peak
+  overlap_name    Name for overlapping peak
+  Genome_size     Genome size(bp)
+  genes           Gene or promoter annotation file with bed6.bed format
+
+optional arguments:
+  -h, --help      show this help message and exit
+```
+**Output:** 
+* An overlapping peaks location BED file 
+* Venn diagram shows the numbers of each seq peaks and over lapping peaks with p value (hypergeometric test)
+* A gene list of overlapping peaks locations between 2 seq
+
+![Barplot](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 ![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 
 
