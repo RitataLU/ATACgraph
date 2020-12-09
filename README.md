@@ -237,28 +237,31 @@ optional arguments:
 
 ```
 ATACgraph 03_callPeak -h
-usage: callPeak [-h] [-s SEPARATE] [-shift SHIFT] [-ES EXTEND] [-bs BINSIZE]
-                input_bam output_name gene_bed
+usage: 03_callPeak.py [-h] [-s SEPARATE] [-shift SHIFT] [-ES EXTEND]
+                      [-bs BINSIZE] [-c CONTROL_BAM]
+                      input_bam output_name gene_bed
 
 positional arguments:
-  input_bam     input bam file
-  output_name   name for output files
-  gene_bed      Gene or promoter annotation bed file, either
-                gene_body_bed6.bed or gene_promoter_bed6.bed
+  input_bam       input ATAC-seq bam file
+  output_name     name for output files
+  gene_bed        Gene or promoter annotation bed file, either
+                  gene_body_bed6.bed or gene_promoter_bed6.bed
 
 optional arguments:
-  -h, --help    show this help message and exit
-  -s SEPARATE   1: integration site; 2: full-extend fragment,default=2
-  -shift SHIFT  shift size from integration site(bp), default: 50
-  -ES EXTEND    extend size from integration site (bp), default: 100
-  -bs BINSIZE   bin size for bigwig (bp), default: 10
+  -h, --help      show this help message and exit
+  -s SEPARATE     1: integration site; 2: full-extend fragment
+  -shift SHIFT    shift size from integration site(bp), default: 50
+  -ES EXTEND      extend size from integration site (bp), default: 100
+  -bs BINSIZE     bin size for bigwig (bp), default: 10
+  -c CONTROL_BAM  input control bam file, default: none
   
 ```
 
 **Output:** 
 * Peak location BED file (.narrowpeak), 
 * Peak intensity bigWigfile (.coverage.bw) 
-* A genes list of overlapping with peaks locations
+* A genes list of overlapping with peaks locations (.peak_gene_list.txt)
+
 
 
 ## Identify differential enriched ATAC-seq peaks between two conditions.
@@ -351,10 +354,10 @@ optional arguments:
 
 ![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
 
-## Comparing peaks between ATAC-seq and another Seq.
+## Comparing peaks between ATAC-seq and RNA-Seq.
 
 **Input:**
-* ATAC-seq peaks BED file & another seq peaks file
+* ATAC-seq peak containing genes in BED file & Gene expression table
 
 ```
 ATACgraph  05_compareRNA -h
@@ -374,8 +377,8 @@ optional arguments:
 * A barplot shows percentage of accessible genes in each expression group.
 * Venn diagram shows the overlapping genes between accessible regions and highly or lowly expression genes
 
-![Barplot](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
-![Venn](https://github.com/RitataLU/ATACgraph/blob/master/venn.png)
+![Barplot](https://github.com/RitataLU/ATACgraph/blob/master/Figures/Barplot_ATAC_vs_RNA.png)
+![Venn](https://github.com/RitataLU/ATACgraph/blob/master/Figures/Venn_ATAC_vs_RNA.png)
 
 
 ## Heatmap and metagene plots of ATAC-seq abundance, Fold enrichment analysis of open regions in genomic features 
