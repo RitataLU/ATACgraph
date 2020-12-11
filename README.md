@@ -4,7 +4,7 @@ ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. 
 
 
 # ATACgraph Pipeline
-![ATACgraph](https://github.com/RitataLU/ATACgraph/blob/master/Figures/ATACgraph-Main.png)
+![ATACgraph](https://github.com/RitataLU/ATACgraph/blob/master/Figures/ATACgraphMain.png)
 
 
 
