@@ -2,6 +2,9 @@
 
 ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 12 analyses to profile (epi)genome. 
 
+# Citations
+If you use ATACgraph for your analysis, please cite it using the following doi: https://doi.org/10.3389/fgene.2020.618478
+
 
 # ATACgraph Pipeline
 ![ATACgraph](https://github.com/RitataLU/ATACgraph/blob/master/Figures/ATACgraphMain.png)
