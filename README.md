@@ -3,8 +3,14 @@
 ATACgraph is a simple and effective software for the analysis of ATAC-Seq data. It contains 12 analyses to profile (epi)genome. 
 
 # Citations
-If you use ATACgraph for your analysis, please cite it using the following doi: https://doi.org/10.3389/fgene.2020.618478
+If you use ATACgraph for your analysis, please cite it using the following [manuscript] (https://pubmed.ncbi.nlm.nih.gov/33584814/)
 
+```
+Lu RJ, Liu YT, Huang CW, Yen MR, Lin CY, Chen PY. ATACgraph: Profiling Genome-Wide Chromatin Accessibility From ATAC-seq. Front Genet. 2021 Jan 13;11:618478. doi: 10.3389/fgene.2020.618478. PMID: 33584814; PMCID: PMC7874078.
+https://www.frontiersin.org/articles/10.3389/fgene.2020.618478/full
+PMID: 33584814 
+
+```
 
 # ATACgraph Pipeline
 ![ATACgraph](https://github.com/RitataLU/ATACgraph/blob/master/Figures/ATACgraphMain.png)
